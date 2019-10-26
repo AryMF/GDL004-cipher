@@ -1,4 +1,4 @@
  const doIt = () => {
 
-    window.cipher.encode(2,"abcdefghijklmnopqrstuvwxyz");
+    window.cipher.encode(-15,"abcdefghijklmnopqrstuvwxyz");
 }
