@@ -26,10 +26,49 @@ div.secondScreen {
     border: 3px solid #73AD21;
     background: #333333;
     z-index: 1;
-    /*visibility: collapse;*/
+    visibility: collapse;
 }
 
 textarea{
     width: 400px;
     height: 550px; 
 }
+
+svg.imageLogo{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    height: 400px;
+    fill:none;
+    stroke:white;
+    stroke-width:5.87215567;
+    stroke-linejoin:round;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+
+    
+}
+
+svg.imageLogo path:nth-child(1){
+    stroke-dasharray: 4000;
+    stroke-offset: 0;
+    -webkit-animation: dash 5s linear forwards;
+}
+
+svg.imageLogo path:nth-child(2){
+    stroke-dasharray: 4000;
+    stroke-offset: 0;
+    -webkit-animation: dash 35s linear forwards;
+}
+
+@-webkit-keyframes dash{
+    from {
+       stroke-dashoffset: 4000;
+    }
+    to {
+       stroke-dashoffset: 0;
+    }
+ }
