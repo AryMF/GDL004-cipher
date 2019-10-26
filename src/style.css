@@ -1,19 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
-    display: flex;
+    
+
 }
 
 div.main {
     position: absolute;
-    width: calc(100vw - 6px);
+    width: 100vw;
+    height: 100vh;
+    /*width: calc(100vw - 6px);
     height: calc(100vh - 6px);
-    border: 3px solid #73AD21;
-    background: dodgerblue;
+    border: 0px solid #73AD21;*/
+    background: #3C787E;
     z-index: 0;
+    
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 } 
+
+div.column{
+    flex: 1;
+    flex-wrap: wrap;
+}
   
 div.secondScreen {
     position: absolute;
@@ -21,9 +38,11 @@ div.secondScreen {
     right: 0;
     left: 0;
     bottom: 0;
-    width: calc(100vw - 6px);
+    width: 100vw;
+    height: 100vh;
+    /*width: calc(100vw - 6px);
     height: calc(100vh - 6px);
-    border: 3px solid #73AD21;
+    border: 0px solid #73AD21;*/
     background: #333333;
     z-index: 1;
     visibility: collapse;
@@ -35,33 +54,29 @@ textarea{
 }
 
 svg.imageLogo{
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-
-    height: 400px;
+    width: 100%;
     fill:none;
-    stroke:white;
-    stroke-width:5.87215567;
+    stroke: #D0CD94;
+    stroke-width:6;
     stroke-linejoin:round;
     stroke-miterlimit:4;
     stroke-dasharray:none;
-    stroke-opacity:1;
+    stroke-opacity:1;    
 
-    
+    -webkit-animation:fill 3s linear forwards 3s;
 }
 
 svg.imageLogo path:nth-child(1){
     stroke-dasharray: 4000;
-    stroke-offset: 0;
-    -webkit-animation: dash 5s linear forwards;
+    stroke-dashoffset: 4000;
+    -webkit-animation: dash 3s linear forwards;
+    
 }
 
 svg.imageLogo path:nth-child(2){
     stroke-dasharray: 4000;
     stroke-offset: 0;
-    -webkit-animation: dash 35s linear forwards;
+    -webkit-animation: dash 25s linear forwards;
 }
 
 @-webkit-keyframes dash{
@@ -71,4 +86,56 @@ svg.imageLogo path:nth-child(2){
     to {
        stroke-dashoffset: 0;
     }
- }
+}
+
+@-webkit-keyframes fill{
+    from {
+       fill: transparent;
+    }
+    to {
+       fill: #808000;
+    }
+}
+
+button.outlineButton{
+    padding: .6vw .6vw;
+    font: bold 2vw sans-serif ;
+    color: #D56F3E;
+    background: transparent;
+    border: 3px solid #D56F3E;
+    visibility: hidden;
+    -webkit-animation:changeVisibility2 1s linear forwards 3s;
+    transition-property: color, background;
+    transition-duration: .5s, .5s;
+}
+
+button.outlineButton:hover{
+    color: #D0CD94;
+    background: #D56F3E;
+}
+
+h1.title{
+    font: 7vw 'Roboto Mono', monospace;
+    color: transparent;
+    letter-spacing: -4 px;
+    -webkit-animation:changeVisibility 1s linear forwards 3s;
+}
+
+@-webkit-keyframes changeVisibility{
+    from {
+       color: transparent;
+    }
+    to {
+       color: #D0CD94;
+    }
+}
+
+@-webkit-keyframes changeVisibility2{
+    from {
+       visibility: hidden;
+    }
+    to {
+       visibility: visible;
+    }
+}
+ 
