@@ -21,12 +21,12 @@
     </div>
 
     <br/>
-    <div id="Encrypt" class="secondScreen">
-      <textarea id="cipherFill" placeholder="Encrypt" onInput="doIt(1)"></textarea>
-      <textarea id="cipherResult" placeholder="Decrypt" onInput="doIt(2)"></textarea> 
+    <div id="Encrypt_Decrypt" class="secondScreen">
+      <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)"></textarea>
+      <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)"></textarea> 
       <br/>
-      <button onclick="">Cifrar</button>
-      <input name="offsetNumber" min="0" max="100" value="2">
+      <button onclick="">-</button>
+      <input type="text"  id="offsetNumber" value="13" onInput="doIt(0)"/>
       <button>+</button>
       <button>Copiar</button> 
     </div>
