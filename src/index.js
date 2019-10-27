@@ -8,3 +8,7 @@
     
     lastTextAreaChanged = option;
 }
+
+let showSecondScreen = () => {
+    document.getElementById("Encrypt_Decrypt").style.visibility = "visible";
+}
