@@ -10,8 +10,16 @@
 }
 
 let showSecondScreen = () => {
-    document.getElementById("Encrypt_Decrypt").style.visibility = "visible";
-    document.getElementById("cipherFill").focus();
+    document.getElementById("divTransicion").style.visibility = "visible";
+    document.getElementById("divTransicion").classList.remove("transition");
+    document.getElementById("divTransicion").classList.add("transform-active");
+    setTimeout(() => {
+        document.getElementById("Encrypt_Decrypt").style.visibility = "visible";
+        document.getElementById("cipherFill").focus();
+    }, 2200);
+
+    //document.getElementById("divTransicion").toggleClass('transform-active');
+    //$('.transform').toggleClass('transform-active');
 }
 
 let spinBootstrap=(option)=>{
