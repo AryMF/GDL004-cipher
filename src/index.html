@@ -42,30 +42,32 @@
         </div>
     </div>
 
-    <footer>
+    <!--<footer>
         Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> 
         from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </<footer>>
+    </footer>-->
 
-    <br/>
     <div id="Encrypt_Decrypt" class="secondScreen">
-      <center>
-        <br/>
-        <div>
-          <button class="outlineButtonSmall" onclick="">-</button>
-          <input class="inputText"  id="offsetNumber" value="13" onInput="doIt(0)"/>
-          <button class="outlineButtonSmall">+</button>
+        <div class="divCentered">
+          <button class="outlineButtonSpinBootstrap" onclick="spinBootstrap(1)">-</button>
+          <input type="number" class="inputText"  id="offsetNumber" value="13" onInput="doIt(0)" />
+          <button class="outlineButtonSpinBootstrap" onclick="spinBootstrap(2)">+</button>
         </div>
-        <br/>
-        <div style="flex-wrap: wrap; align-content: space-between;"">
-          <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)"></textarea>
-          <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)"></textarea>
+
+        <div class="content">
+          <div class="divColumn">
+            <p id="cipherDecodeTitle" class="instructions">Texto a encriptar:</p>
+            <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)" autofocus></textarea>
+          </div>
+          <div class="divColumnSmall">
+            <button class="outlineButtonSmall" onclick="swap()">Swap</button>
+            <!-- <button class="outlineButtonSmall" onclick="">Copiar</button> -->
+          </div>
+          <div class="divColumn">
+            <p id="cipherEncodeTitle" class="instructions" style="visibility:hidden;">Texto a desencriptar:</p>
+            <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)" disabled="true"></textarea>
+          </div>
         </div>
-        <br/>
-        <div>
-            <button class="outlineButtonSmall">Copiar</button> 
-        </div>
-      </center>
     </div>
 
     <script src="cipher.js"></script>

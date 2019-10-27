@@ -11,4 +11,31 @@
 
 let showSecondScreen = () => {
     document.getElementById("Encrypt_Decrypt").style.visibility = "visible";
+    document.getElementById("cipherFill").focus();
+}
+
+let spinBootstrap=(option)=>{
+    option == 1 ? document.getElementById("offsetNumber").stepDown(1) 
+        : document.getElementById("offsetNumber").stepUp(1);
+    doIt(0);
+}
+
+let swap=()=>{
+    if(document.getElementById("cipherDecodeTitle").style.visibility == "hidden" ){
+        document.getElementById("cipherDecodeTitle").style.visibility = "visible";
+        document.getElementById("cipherEncodeTitle").style.visibility = "hidden";
+        document.getElementById("cipherFill").disabled = false;
+        document.getElementById("cipherFill").focus();
+        document.getElementById("cipherResult").disabled = true;
+    }
+    else {
+        document.getElementById("cipherDecodeTitle").style.visibility = "hidden";
+        document.getElementById("cipherEncodeTitle").style.visibility = "visible";
+        document.getElementById("cipherFill").disabled = true;
+        document.getElementById("cipherResult").disabled = false;
+        document.getElementById("cipherResult").focus();
+    }
+    
+    document.getElementById("cipherFill").value = "";
+    document.getElementById("cipherResult").value = "";
 }

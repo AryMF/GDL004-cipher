@@ -5,17 +5,12 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    
-
 }
 
 div.main {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    /*width: calc(100vw - 6px);
-    height: calc(100vh - 6px);
-    border: 0px solid #73AD21;*/
     background: #3C787E;
     z-index: 0;
     
@@ -24,7 +19,6 @@ div.main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    visibility: collapse;
     
 } 
 
@@ -34,6 +28,7 @@ div.column{
 }
   
 div.secondScreen {
+    background: #241623;
     position: absolute;
     top: 0;
     right: 0;
@@ -41,14 +36,62 @@ div.secondScreen {
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    /*width: calc(100vw - 6px);
-    height: calc(100vh - 6px);
-    border: 0px solid #73AD21;*/
-    
-    background: #241623;
     z-index: 1;
-    /*visibility: collapse;*/
+    visibility: collapse;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
 }
+
+/******************************************/
+.divCentered{
+    text-align: center;
+    padding-top:2vh;
+    padding-bottom: 2vh;
+    width: 98%;
+
+    /*border: 3px solid green;*/
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    width: 98%;
+    height: 98%;
+    /*border: 3px solid palevioletred;*/
+}
+
+.divColumn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: stretch;
+
+    margin: auto;
+    width: 41.5%;
+    height: 98%;
+    /*border: 3px solid cyan;*/
+}
+
+.divColumnSmall {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    margin: auto;
+    width: 15%;
+    height: 98%;
+    /*border: 3px solid red;*/
+}
+
+/******************************************/
 
 svg.imageLogo{
     width: 100%;
@@ -95,8 +138,7 @@ svg.imageLogo path:nth-child(2){
 }
 
 button.outlineButton{
-    padding: .6vw .6vw;
-    font: bold 2vw sans-serif ;
+    font: bold 2vw 'Roboto Mono', monospace;
     color: #D56F3E;
     background: transparent;
     border: 3px solid #D56F3E;
@@ -104,11 +146,6 @@ button.outlineButton{
     -webkit-animation:changeVisibility2 1s linear forwards 3s;
     transition-property: color, background;
     transition-duration: .5s, .5s;
-}
-
-button.outlineButton:hover{
-    color: #D0CD94;
-    background: #D56F3E;
 }
 
 h1.title{
@@ -136,9 +173,8 @@ h1.title{
     }
 }
 
-button.outlineButtonSmall{
-    padding: .4vw .4vw;
-    font: bold 1.5vw sans-serif ;
+button.outlineButtonSpinBootstrap{
+    font: bold 1.5vw 'Roboto Mono', monospace;
     color: #D56F3E;
     background: transparent;
     border: 3px solid #D56F3E;
@@ -146,18 +182,33 @@ button.outlineButtonSmall{
     transition-duration: .5s, .5s;
 }
 
-button.outlineButtonSmall:hover{
+button.outlineButtonSmall{
+    font: bold 1.5vw 'Roboto Mono', monospace;
+    color: #D56F3E;
+    background: transparent;
+    border: 3px solid #D56F3E;
+    margin: 10vh 1vw 0vh;
+    transition-property: color, background;
+    transition-duration: .5s, .5s;
+}
+
+button.outlineButton:hover,button.outlineButtonSmall:hover,button.outlineButtonSpinBootstrap:hover{
     color: #D0CD94;
     background: #D56F3E;
 }
 
 input.inputText{
-    padding: .4vw .4vw;
-    font: bold 1.5vw sans-serif ;
+    font: bold 1.5vw 'Roboto Mono', monospace;
     color: #D56F3E;
     text-align: center;
     background: transparent;
     border: 3px solid #D56F3E;
+    
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 textarea{
@@ -165,6 +216,12 @@ textarea{
     border: none;
     font: 3vw 'Roboto Mono', monospace;
     color: #808000;
-    /*width: 45%;
-    height: 80vh; */
+    width: 100%;
+    height: 80%;
+}
+
+p.instructions{
+    font: 3vh 'Roboto Mono', monospace;
+    color: #3C787E;
+    letter-spacing: -4 px;
 }
