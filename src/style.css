@@ -24,6 +24,7 @@ div.main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    visibility: collapse;
     
 } 
 
@@ -43,14 +44,10 @@ div.secondScreen {
     /*width: calc(100vw - 6px);
     height: calc(100vh - 6px);
     border: 0px solid #73AD21;*/
-    background: #333333;
+    
+    background: #241623;
     z-index: 1;
-    visibility: collapse;
-}
-
-textarea{
-    width: 400px;
-    height: 550px; 
+    /*visibility: collapse;*/
 }
 
 svg.imageLogo{
@@ -138,4 +135,36 @@ h1.title{
        visibility: visible;
     }
 }
- 
+
+button.outlineButtonSmall{
+    padding: .4vw .4vw;
+    font: bold 1.5vw sans-serif ;
+    color: #D56F3E;
+    background: transparent;
+    border: 3px solid #D56F3E;
+    transition-property: color, background;
+    transition-duration: .5s, .5s;
+}
+
+button.outlineButtonSmall:hover{
+    color: #D0CD94;
+    background: #D56F3E;
+}
+
+input.inputText{
+    padding: .4vw .4vw;
+    font: bold 1.5vw sans-serif ;
+    color: #D56F3E;
+    text-align: center;
+    background: transparent;
+    border: 3px solid #D56F3E;
+}
+
+textarea{
+    background: transparent;
+    border: none;
+    font: 3vw 'Roboto Mono', monospace;
+    color: #808000;
+    /*width: 45%;
+    height: 80vh; */
+}

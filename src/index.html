@@ -38,7 +38,7 @@
         </div>
         <div class="column">
           <h1 class="title">COLEOPTERA</h1>
-          <button class="outlineButton">Comenzar</button>
+          <button class="outlineButton" onclick="showSecondScreen()">Comenzar</button>
         </div>
     </div>
 
@@ -49,13 +49,23 @@
 
     <br/>
     <div id="Encrypt_Decrypt" class="secondScreen">
-      <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)"></textarea>
-      <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)"></textarea> 
-      <br/>
-      <button onclick="">-</button>
-      <input type="text"  id="offsetNumber" value="13" onInput="doIt(0)"/>
-      <button>+</button>
-      <button>Copiar</button> 
+      <center>
+        <br/>
+        <div>
+          <button class="outlineButtonSmall" onclick="">-</button>
+          <input class="inputText"  id="offsetNumber" value="13" onInput="doIt(0)"/>
+          <button class="outlineButtonSmall">+</button>
+        </div>
+        <br/>
+        <div style="flex-wrap: wrap; align-content: space-between;"">
+          <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)"></textarea>
+          <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)"></textarea>
+        </div>
+        <br/>
+        <div>
+            <button class="outlineButtonSmall">Copiar</button> 
+        </div>
+      </center>
     </div>
 
     <script src="cipher.js"></script>
