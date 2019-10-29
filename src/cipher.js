@@ -29,7 +29,6 @@ window.cipher = {
     let result = [];
     let offsetCalculated = offset % 26;
     offsetCalculated = offsetCalculated < 0 ? -1 * offsetCalculated : 26 - offsetCalculated;
-    //alert(offsetCalculated);
 
     for(let i=0;i<string.length;i++){
       switch(true){
