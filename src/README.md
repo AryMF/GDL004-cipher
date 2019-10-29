@@ -35,11 +35,16 @@ auxiliar a participantes de ARGs.
 
 ## Primer prototipo
 
+![alt text](https://github.com/AryMF/GDL004-cipher/blob/master/src/images/Prototipo.png "Primer prototipo")
+
 ***
 
 ## Feedback recibido
 
-    El primer prototipo incluía un botón de copiar, pero después del feedback se llego a la conclusión de que no era necesario. La idea de mantener un diseño sencillo y sin instrucciones para crear el sentimiento en el usuario de tener que "decifrar" la interfez fue bien recibida por lo tal se opto por mantenerla. 
+    El primer prototipo incluía un botón de copiar, pero después del feedback se llego a la conclusión
+    de que no era necesario. La idea de mantener un diseño sencillo y sin instrucciones para crear el
+    sentimiento en el usuario de tener que "decifrar" la interfez fue bien recibida por lo tal se opto
+    por mantenerla. 
 
 ***
 
