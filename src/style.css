@@ -84,8 +84,6 @@ div.transition{
     padding-top:2vh;
     padding-bottom: 2vh;
     width: 98%;
-
-    /*border: 3px solid green;*/
 }
 
 .content {
@@ -96,7 +94,6 @@ div.transition{
     justify-content: center;
     width: 98%;
     height: 98%;
-    /*border: 3px solid palevioletred;*/
 }
 
 .divColumn {
@@ -108,7 +105,6 @@ div.transition{
     margin: auto;
     width: 41.5%;
     height: 98%;
-    /*border: 3px solid cyan;*/
 }
 
 .divColumnSmall {
@@ -120,7 +116,6 @@ div.transition{
     margin: auto;
     width: 15%;
     height: 98%;
-    /*border: 3px solid red;*/
 }
 
 /******************************************/

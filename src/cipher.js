@@ -7,22 +7,21 @@ window.cipher = {
 
     for(let i=0;i<string.length;i++){
       switch(true){
+        //cipher mayúsculas
         case string.charCodeAt(i) >= 65 && string.charCodeAt(i) <= 90:
-          //cipher mayúsculas
           result.push(String.fromCharCode((string.charCodeAt(i) - 65 + offsetCalculated) % 26 + 65));
         break;
+        //cipher minúsculas
         case string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122:
-          //cipher minúsculas
           result.push(String.fromCharCode((string.charCodeAt(i) - 97 + offsetCalculated) % 26 + 97));
         break;
+        //ignorar todo lo demás
         default:
-          //ignorar todo lo demás
           result.push(string[i]);
         break;
       }
     }
-    //alert("Encode: " + string + " es " + result);
-    document.getElementById("cipherResult").value = result.join("");
+    return result.join("");
   },
   //Función para decodificar
   decode: (offset, string) => {
@@ -32,21 +31,20 @@ window.cipher = {
 
     for(let i=0;i<string.length;i++){
       switch(true){
+        //Decipher mayúsculas
         case string.charCodeAt(i) >= 65 && string.charCodeAt(i) <= 90:
-          //cipher mayúsculas
           result.push(String.fromCharCode((string.charCodeAt(i) - 65 + offsetCalculated) % 26 + 65));
         break;
+        //Decipher minúsculas
         case string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122:
-          //cipher minúsculas
           result.push(String.fromCharCode((string.charCodeAt(i) - 97 + offsetCalculated) % 26 + 97));
         break;
+        //ignorar todo lo demás
         default:
-          //ignorar todo lo demás
           result.push(string[i]);
         break;
       }
     }
-    //alert("Decode: " + string + " es " + result);
-    document.getElementById("cipherFill").value = result.join("");
+    return result.join("");
   }
 };

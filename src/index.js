@@ -1,49 +1,77 @@
- let lastTextAreaChanged=0;
+let lastTextAreaChanged=0;
+const delayTime = 2000;
+const offsetOption = 0;
+const cipherOption = 1;
+const decipherOption = 2;
+const stepDownOption = 1;
+const stepUpOption = 2;
 
- const doIt = (option) => {
+const getDivTransition = document.getElementById("divTransition");
+const getOffsetNumber = document.getElementById("offsetNumber");
+const getCipherFill = document.getElementById("cipherFill");
+const getDecipherFill = document.getElementById("decipherFill");
+const getCipherDecodeTitle = document.getElementById("cipherDecodeTitle");
+const getCipherEncodeTitle = document.getElementById("cipherEncodeTitle");
+
+const main = () => {
+    document.getElementById("StartButton").addEventListener("click", showSecondScreen);
+    document.getElementById("spinBootstrapSubtract").addEventListener("click", function(){ spinBootstrap(stepDownOption); });
+    document.getElementById("spinBootstrapAdd").addEventListener("click", function(){ spinBootstrap(stepUpOption); });
+    document.getElementById("swapButton").addEventListener("click", swap);
+    getOffsetNumber.addEventListener("input", function(){ doIt(offsetOption); });
+    getCipherFill.addEventListener("input", function(){ doIt(cipherOption); });
+    getDecipherFill.addEventListener("input", function(){ doIt(decipherOption); });
+};
+
+window.onload = function(){
+    main();
+};
+
+const showSecondScreen = () => {
+    getDivTransition.style.visibility = "visible";
+    getDivTransition.classList.remove("transition");
+    getDivTransition.classList.add("transform-active");
+    setTimeout(() => {
+        document.getElementById("divEncryptDecrypt").style.visibility = "visible";
+        getCipherFill.focus();
+    }, delayTime);
+};
+
+const doIt = (option) => {
     option == 0 ? option = lastTextAreaChanged : option;
 
-    option == 1 ? window.cipher.encode(document.getElementById("offsetNumber").value, document.getElementById("cipherFill").value) 
-        : window.cipher.decode(document.getElementById("offsetNumber").value,document.getElementById("cipherResult").value);
-    
-    lastTextAreaChanged = option;
-}
-
-let showSecondScreen = () => {
-    document.getElementById("divTransicion").style.visibility = "visible";
-    document.getElementById("divTransicion").classList.remove("transition");
-    document.getElementById("divTransicion").classList.add("transform-active");
-    setTimeout(() => {
-        document.getElementById("Encrypt_Decrypt").style.visibility = "visible";
-        document.getElementById("cipherFill").focus();
-    }, 2200);
-
-    //document.getElementById("divTransicion").toggleClass('transform-active');
-    //$('.transform').toggleClass('transform-active');
-}
-
-let spinBootstrap=(option)=>{
-    option == 1 ? document.getElementById("offsetNumber").stepDown(1) 
-        : document.getElementById("offsetNumber").stepUp(1);
-    doIt(0);
-}
-
-let swap=()=>{
-    if(document.getElementById("cipherDecodeTitle").style.visibility == "hidden" ){
-        document.getElementById("cipherDecodeTitle").style.visibility = "visible";
-        document.getElementById("cipherEncodeTitle").style.visibility = "hidden";
-        document.getElementById("cipherFill").disabled = false;
-        document.getElementById("cipherFill").focus();
-        document.getElementById("cipherResult").disabled = true;
+    if(option==1){
+        document.getElementById("decipherFill").value = window.cipher.encode(getOffsetNumber.value, getCipherFill.value);
     }
     else {
-        document.getElementById("cipherDecodeTitle").style.visibility = "hidden";
-        document.getElementById("cipherEncodeTitle").style.visibility = "visible";
-        document.getElementById("cipherFill").disabled = true;
-        document.getElementById("cipherResult").disabled = false;
-        document.getElementById("cipherResult").focus();
+        document.getElementById("cipherFill").value = window.cipher.decode(getOffsetNumber.value, getDecipherFill.value);
+    }
+
+    lastTextAreaChanged = option;
+};
+
+const spinBootstrap = (option) => {
+    option == 1 ? getOffsetNumber.stepDown(stepDownOption) 
+        : getOffsetNumber.stepUp(stepUpOption);
+    doIt(offsetOption);
+};
+
+const swap = () => {
+    if(getCipherDecodeTitle.style.visibility == "hidden" ){
+        getCipherDecodeTitle.style.visibility = "visible";
+        getCipherEncodeTitle.style.visibility = "hidden";
+        getCipherFill.disabled = false;
+        getCipherFill.focus();
+        getDecipherFill.disabled = true;
+    }
+    else {
+        getCipherDecodeTitle.style.visibility = "hidden";
+        getCipherEncodeTitle.style.visibility = "visible";
+        getCipherFill.disabled = true;
+        getDecipherFill.disabled = false;
+        getDecipherFill.focus();
     }
     
-    document.getElementById("cipherFill").value = "";
-    document.getElementById("cipherResult").value = "";
-}
+    getCipherFill.value = "";
+    getDecipherFill.value = "";
+};

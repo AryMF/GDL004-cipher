@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="divTransicion" class="transition transform"></div>
+    <div id="divTransition" class="transition transform"></div>
 
     <div id="root" class="main">
       <div class="column">
@@ -23,7 +23,7 @@
           xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
           height="600px"
-          viewBox="-51 0 511 511.99781"
+          viewbox="-51 0 511 511.99781"
           width="600px"
           version="1.1"
           id="svg3811"
@@ -40,7 +40,7 @@
         </div>
         <div class="column">
           <h1 class="title">COLEOPTERA</h1>
-          <button class="outlineButton" onclick="showSecondScreen()">Comenzar</button>
+          <button id="StartButton" class="outlineButton">Comenzar</button>
         </div>
     </div>
 
@@ -49,25 +49,25 @@
         from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </footer>-->
 
-    <div id="Encrypt_Decrypt" class="secondScreen">
+    <div id="divEncryptDecrypt" class="secondScreen">
         <div class="divCentered">
-          <button class="outlineButtonSpinBootstrap" onclick="spinBootstrap(1)">-</button>
-          <input type="number" class="inputText"  id="offsetNumber" value="13" onInput="doIt(0)" />
-          <button class="outlineButtonSpinBootstrap" onclick="spinBootstrap(2)">+</button>
+          <button id="spinBootstrapSubtract" class="outlineButtonSpinBootstrap">-</button>
+          <input id="offsetNumber" type="number" class="inputText"  value="13"/>
+          <button id="spinBootstrapAdd" class="outlineButtonSpinBootstrap">+</button>
         </div>
 
         <div class="content">
           <div class="divColumn">
             <p id="cipherDecodeTitle" class="instructions">Texto a encriptar:</p>
-            <textarea id="cipherFill" placeholder="Decrypt" onInput="doIt(1)" autofocus></textarea>
+            <textarea id="cipherFill" placeholder="Decrypt" autofocus ></textarea>
           </div>
           <div class="divColumnSmall">
-            <button class="outlineButtonSmall" onclick="swap()">Swap</button>
+            <button id="swapButton" class="outlineButtonSmall">Swap</button>
             <!-- <button class="outlineButtonSmall" onclick="">Copiar</button> -->
           </div>
           <div class="divColumn">
             <p id="cipherEncodeTitle" class="instructions" style="visibility:hidden;">Texto a desencriptar:</p>
-            <textarea id="cipherResult" placeholder="Encrypt" onInput="doIt(2)" disabled="true"></textarea>
+            <textarea id="decipherFill" placeholder="Encrypt" disabled="true" ></textarea>
           </div>
         </div>
     </div>
