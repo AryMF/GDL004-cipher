@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="divTransition" class="transition transform"></div>
-
+    <!-- Pantalla de bienvenida-->
     <div id="root" class="main">
       <div class="column">
         <object>
-
           <svg class="imageLogo"
           xmlns:dc="http://purl.org/dc/elements/1.1/"
           xmlns:cc="http://creativecommons.org/ns#"
@@ -44,11 +42,10 @@
         </div>
     </div>
 
-    <!--<footer>
-        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> 
-        from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </footer>-->
+    <!-- Pantalla auxiliar para efecto de transición-->
+    <div id="divTransition" class="transition transform"></div>
 
+    <!-- Segunda pantalla con funcionalidad de cifrado/decifrado-->
     <div id="divEncryptDecrypt" class="secondScreen">
         <div class="divCentered">
           <button id="spinBootstrapSubtract" class="outlineButtonSpinBootstrap">-</button>
@@ -63,7 +60,6 @@
           </div>
           <div class="divColumnSmall">
             <button id="swapButton" class="outlineButtonSmall">Swap</button>
-            <!-- <button class="outlineButtonSmall" onclick="">Copiar</button> -->
           </div>
           <div class="divColumn">
             <p id="cipherEncodeTitle" class="instructions" style="visibility:hidden;">Texto a desencriptar:</p>
